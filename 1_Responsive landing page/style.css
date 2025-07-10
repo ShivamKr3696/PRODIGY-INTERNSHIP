@@ -1,0 +1,229 @@
+/* Reset and basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: #ddd2d2;
+  color: #333;
+}
+
+/* Navbar fixed */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.4s ease, padding 0.4s ease;
+  z-index: 10000;
+}
+
+
+/* Navbar scrolled */
+nav.scrolled {
+  background-color: #111;
+  padding: 10px 50px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* Logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  user-select: none;
+}
+
+/* Menu styles */
+ul.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+ul.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Hover effect */
+ul.menu li a:hover {
+  background-color: #3633ee;
+  color: white;
+}
+
+
+/* Scrolled menu items */
+nav.scrolled ul.menu li a {
+  color: #ddd;
+}
+nav.scrolled ul.menu li a:hover {
+  background-color: #3824d3;
+  color: white;
+}
+
+/* Sections styling */
+section {
+  max-width: 900px;
+  margin: 140px auto 60px; /* margin top for fixed nav */
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+section h1 {
+  margin-bottom: 15px;
+  font-size: 2.4rem;
+  color: #222;
+}
+
+section p {
+  font-size: 1.15rem;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+
+
+/* Hover effect on all sections */
+section {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  will-change: transform, box-shadow;
+}
+section:hover {
+  box-shadow: 0 12px 25px rgba(255, 75, 43, 0.4);
+  transform: translateY(-8px);
+}
+
+/* Animation keyframes */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initially hide sections */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Animate visible sections */
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeSlideUp 0.6s forwards;
+}
+
+/* Animate headings and paragraphs inside visible sections */
+section.visible h1,
+section.visible p,
+section.visible ul,
+section.visible form {
+  animation: fadeSlideUp 0.8s forwards;
+  animation-delay: 0.2s;
+}
+
+
+
+
+/* Hero Section special */
+#home {
+  background: linear-gradient(135deg, #ff416c, #4ab5f7);
+  color: white;
+  text-align: center;
+  padding: 180px 20px 140px;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+   max-width: 100%;
+}
+#home h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+#home p {
+  font-size: 1.3rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Contact form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+}
+form input, form textarea {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  transition: border-color 0.3s ease;
+}
+form input:focus, form textarea:focus {
+  border-color: #ff4b2b;
+  outline: none;
+}
+form button {
+  background-color: #ff4b2b;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #ff7b66;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  nav {
+    padding: 10px 20px;
+  }
+  ul.menu {
+    gap: 15px;
+  }
+  section {
+    margin: 120px 20px 40px;
+    padding: 15px;
+  }
+  #home h1 {
+    font-size: 2.2rem;
+  }
+  #home p {
+    font-size: 1.1rem;
+  }
+}
+/* Created By Shivam Kumar...   */
