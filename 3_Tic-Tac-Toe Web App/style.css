@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  background-color: #111;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  padding: 30px;
+  border-radius: 12px;
+ 
+  width: 320px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.turn {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  background-color: #000;
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cell:hover {
+  background-color: #222;
+}
+
+.x {
+  color: #ffffff;
+  text-shadow: 0 0 10px #00ffcc; 
+}
+
+.o {
+  color: #b967ff;
+  text-shadow: 0 0 10px #b967ff;
+}
+
+.result {
+  font-size: 20px;
+  margin: 10px;
+  font-weight: bold;
+}
+
+#restart {
+  background-color: #00cc44;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,255,0,0.4);
+  transition: background 0.3s;
+}
+
+#restart:hover {
+  background-color: #00aa3f;
+}
+/* Created By Shivam Kumar...   */
